@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node backend/server.js",
     "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/server",
-    "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/server",
-    "build": "mkdir -p build && cp -r * build/ && cp -r .* build/ && cp -r backend/* build/backend/ && npm install --prefix build/"
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/server"
   },
   "author": "Achraf Ameur",
   "license": "ISC",
