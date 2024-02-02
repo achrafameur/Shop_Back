@@ -42,14 +42,19 @@ jobs:
           tag_name: v${{ github.run_number }}
           release_name: Release ${{ github.run_number }}
           body: Release notes and changelog for this version.
+        permissions:
+          contents: read
+          issues: write
+          packages: write
+          pull_requests: write
 
-      - name: Upload Release Asset
-        id: upload_release_asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./path/to/your/release-asset.zip
-          asset_name: release-asset.zip
-          asset_content_type: application/zip
+      # - name: Upload Release Asset
+      #   id: upload_release_asset
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+      #     asset_path: ./path/to/your/release-asset.zip
+      #     asset_name: release-asset.zip
+      #     asset_content_type: application/zip
