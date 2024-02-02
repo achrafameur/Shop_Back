@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node backend/server.js",
     "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/server",
-    "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/server"
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/server",
+    "lint": "eslint . --fix && prettier --write ."
   },
   "author": "Achraf Ameur",
   "license": "ISC",
@@ -25,6 +26,9 @@
     "validator": "^13.1.17"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^3.2.4"
   }
 }
