@@ -42,11 +42,11 @@ jobs:
           tag_name: v${{ github.run_number }}
           release_name: Release ${{ github.run_number }}
           body: Release notes and changelog for this version.
-        permissions:
-          contents: read
-          issues: write
-          packages: write
-          pull_requests: write
+        # permissions:
+        #   contents: read
+        #   issues: write
+        #   packages: write
+        #   pull_requests: write
 
       # - name: Upload Release Asset
       #   id: upload_release_asset
