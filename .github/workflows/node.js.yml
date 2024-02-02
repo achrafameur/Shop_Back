@@ -33,20 +33,20 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Create Release Tag
+      - name: Get Release Token
+        id: get_release_token
+        run: echo "::set-output name=token::$(echo ${{ secrets.GITHUB_TOKEN }} | base64)"
+        shell: bash
+
+      - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.get_release_token.outputs.token }}
         with:
           tag_name: v${{ github.run_number }}
           release_name: Release ${{ github.run_number }}
           body: Release notes and changelog for this version.
-        # permissions:
-        #   contents: read
-        #   issues: write
-        #   packages: write
-        #   pull_requests: write
 
       # - name: Upload Release Asset
       #   id: upload_release_asset
