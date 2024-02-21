@@ -1,6 +1,6 @@
 module.exports = {
     // Spécifie les dossiers contenant les tests
-    testMatch: ['<rootDir>/backend/tests/test.js'],
+    testMatch: ['<rootDir>/tests/test.js'],
   
     // Spécifie les dossiers à exclure des tests
     testPathIgnorePatterns: ['/node_modules/'],
