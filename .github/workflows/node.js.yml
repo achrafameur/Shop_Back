@@ -58,8 +58,8 @@ jobs:
 
       # Create .zip archive of the application
       - name: Archive Application
-        run: zip -r app.zip ../*
-        working-directory: ../*
+        run: zip -r app.zip .
+        working-directory: ./
 
       # Upload .zip file as a release asset
       - name: Upload Release Asset
