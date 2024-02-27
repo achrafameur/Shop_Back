@@ -1,12 +1,15 @@
 module.exports = {
     // Spécifie les dossiers contenant les tests
-    testMatch: ['<rootDir>/tests/test.js'],
+    testMatch: [
+      '<rootDir>/tests/testUnitaire.js',
+      '<rootDir>/tests/testIntegration.js',
+    ],
   
     // Spécifie les dossiers à exclure des tests
     testPathIgnorePatterns: ['/node_modules/'],
   
     // Indique à Jest d'utiliser jsdom comme environnement de test
-    testEnvironment: 'jsdom',
+    testEnvironment: 'node',
   
     // Permet d'ajouter des plugins ou des configurations supplémentaires si nécessaire
     // setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
