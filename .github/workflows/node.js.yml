@@ -57,7 +57,7 @@ jobs:
           body: Release notes and changelog for this version.
       # Create .zip archive of the application
       - name: Archive Application
-        run: zip -r app.zip .
+        run: zip -r app.zip ./
         working-directory: path/to/your/application
 
       # Upload .zip file as a release asset
